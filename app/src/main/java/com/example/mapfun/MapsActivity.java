@@ -69,6 +69,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onLocationChanged(Location location) {
 
+                LatLng userLocation = new LatLng(location.getAltitude(),location.getAltitude());
+                mMap.addMarker(new MarkerOptions().position(userLocation).title("Your location"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+
             }
 
             @Override
